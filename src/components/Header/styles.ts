@@ -1,3 +1,4 @@
+import { theme } from '@/styles/theme';
 import styled from 'styled-components';
 
 export const Wrapper = styled.nav`
@@ -6,7 +7,7 @@ export const Wrapper = styled.nav`
   align-items: center;
 
   width: 100%;
-  height: 100px;
+  height: ${theme.layout.headerHeight};
 
   padding: 0 40px;
   border-bottom: 1px solid var(--foreground);
