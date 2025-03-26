@@ -1,3 +1,9 @@
+import Card from '@/components/Card';
+
 export default function Page() {
-  return <h1>Hello Starsoft!</h1>;
+  return (
+    <>
+      <Card />
+    </>
+  );
 }
