@@ -14,7 +14,7 @@ const Card = ({ name, description, price, image = '' }: CardProps) => {
     <Box>
       <Image
         src={image}
-        alt={name}
+        alt={'Imagem do produto ' + name}
         width={295}
         height={258}
         style={{ borderRadius: '8px' }}

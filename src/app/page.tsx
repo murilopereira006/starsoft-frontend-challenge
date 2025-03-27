@@ -45,7 +45,7 @@ export default function Page() {
           variant='secondary'
           size='sm'
         >
-          Finalizar compra
+          Carregar mais
         </Button>
       </div>
     </Wrapper>
