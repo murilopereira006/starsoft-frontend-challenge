@@ -6,24 +6,32 @@ import CartItem from '@/components/CartItem';
 import { BoxContent, Wrapper } from './styles';
 
 import { CartItemProps } from '@/components/CartItem/types';
-import { mockCart } from './mock';
+
+import { useAppSelector } from '@/hooks/useRedux';
 
 export default function Checkout() {
+  const cartItems = useAppSelector((state) => state.cart.items);
+
   return (
     <Wrapper>
       <BoxContent>
         <h1>Checkout</h1>
 
-        {mockCart.map((item: Partial<CartItemProps>) => (
-          <CartItem
-            key={'cart item ' + item.id}
-            name={item.name ?? ''}
-            description={item.description ?? ''}
-            price={item.price ?? 0}
-            quant={item.quant}
-            image={''}
-          />
-        ))}
+        {cartItems ? (
+          cartItems.map((item: CartItemProps) => (
+            <CartItem
+              key={item.id}
+              id={item.id}
+              name={item.name}
+              description={item.description}
+              price={item.price}
+              quant={item.quant}
+              image={item.image}
+            />
+          ))
+        ) : (
+          <p>Nenhum item no carrinho</p>
+        )}
 
         <h1>Total</h1>
 

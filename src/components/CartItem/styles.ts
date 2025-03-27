@@ -7,7 +7,7 @@ export const Card = styled.div`
   align-items: center;
 
   width: 100%;
-  max-width: 650px;
+  max-width: 1050px;
   height: 200px;
 
   background-color: ${theme.colors.gray};

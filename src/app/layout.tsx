@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 
+import ReduxProvider from '@/store/ReduxProvider';
+
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import './globals.css';
@@ -25,9 +27,11 @@ export default function RootLayout({
   return (
     <html>
       <body className={poppins.className}>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <ReduxProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </ReduxProvider>
       </body>
     </html>
   );

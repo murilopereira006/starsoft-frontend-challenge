@@ -9,7 +9,7 @@ import EtheriumIcon from '@/../public/assets/etherium.png';
 
 import { Box, Description, Price, ProductName } from './styles';
 
-const Card = ({ name, description, price, image = '' }: CardProps) => {
+const Card = ({ name, description, price, image = '', action }: CardProps) => {
   return (
     <Box>
       <Image
@@ -28,7 +28,7 @@ const Card = ({ name, description, price, image = '' }: CardProps) => {
         <span>{price} ETH</span>
       </Price>
 
-      <Button action={() => console.log('comprar')}>COMPRAR</Button>
+      <Button action={action}>COMPRAR</Button>
     </Box>
   );
 };

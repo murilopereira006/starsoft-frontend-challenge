@@ -4,5 +4,6 @@ export type CardProps = {
   description: string;
   price: number;
   image: string;
+  action: () => void;
   createdAt?: string;
 };

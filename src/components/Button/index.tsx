@@ -10,7 +10,7 @@ const Button = ({
 }: ButtonProps) => {
   return (
     <ButtonStyled
-      onClick={() => action}
+      onClick={action}
       disabled={disabled}
       variant={variant}
       size={size}
