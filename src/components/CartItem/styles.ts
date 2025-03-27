@@ -22,14 +22,14 @@ export const TextContent = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
-  width: 100%;
+  flex: 1;
   height: 100%;
+  overflow: hidden;
 `;
 
 export const ProductName = styled.h2`
   font-size: ${theme.typography.sizes.large};
   font-weight: 500;
-  line-height: 140%;
   letter-spacing: 0%;
 
   color: ${theme.colors.text.primary};
