@@ -1,8 +1,8 @@
 export type CardProps = {
-  id: number;
+  id?: number;
   name: string;
   description: string;
   price: number;
   image: string;
-  createdAt: string;
+  createdAt?: string;
 };

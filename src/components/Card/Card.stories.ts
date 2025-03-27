@@ -11,7 +11,11 @@ type Story = StoryObj<typeof Card>;
 
 export const Primary: Story = {
   args: {
-    primary: true,
-    label: 'Card',
+    name: 'Product name',
+    description: 'Product description',
+    price: 12,
+    image:
+      'https://images.pexels.com/photos/29799615/pexels-photo-29799615/free-photo-of-reflexao-da-cerveja-perfeita.jpeg',
+    variant: 'normal',
   },
 };

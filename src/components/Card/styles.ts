@@ -2,6 +2,10 @@ import { theme } from '@/styles/theme';
 import styled from 'styled-components';
 
 export const Box = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   width: 345px;
   height: 555px;
 
@@ -18,7 +22,7 @@ export const ProductName = styled.h2`
 
   color: ${theme.colors.text.primary};
 
-  margin: ${theme.spacing.small} 0;
+  margin-top: ${theme.spacing.large};
 `;
 
 export const Description = styled.h6`
@@ -35,13 +39,13 @@ export const Description = styled.h6`
 
 export const Price = styled.div`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-start;
 
   font-size: ${theme.typography.sizes.large};
   font-weight: 500;
 
   color: ${theme.colors.text.primary};
 
-  margin-top: ${theme.spacing.small};
+  margin: ${theme.spacing.large} 0;
+  gap: ${theme.spacing.small};
 `;
