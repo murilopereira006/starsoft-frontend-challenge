@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import { useAppDispatch } from '@/hooks/useRedux';
-import { removeItem } from '@/store/slices/cartSlice';
+import { removeItem, updateItemQuantity } from '@/store/slices/cartSlice';
 
 import EtheriumIcon from '@/../public/assets/etherium.png';
 import {
@@ -13,6 +13,7 @@ import {
   TextContent,
 } from './styles';
 
+import NumericSelector from '../NumericSelector';
 import { CartItemProps } from './types';
 
 const CartItem = ({
@@ -21,9 +22,13 @@ const CartItem = ({
   name,
   description,
   price,
-  quant,
+  quantity = 0,
 }: CartItemProps) => {
   const dispatch = useAppDispatch();
+
+  const handleUpdateQuantity = (newQuantity: number) => {
+    dispatch(updateItemQuantity({ id, quantity: newQuantity }));
+  };
 
   return (
     <Card>
@@ -52,7 +57,10 @@ const CartItem = ({
         </div>
 
         <DeleteBox>
-          <span>Quantidade: {quant}</span>
+          <NumericSelector
+            value={quantity}
+            updateValue={handleUpdateQuantity}
+          />
           <button onClick={() => dispatch(removeItem(id.toString()))}>
             Remover
           </button>

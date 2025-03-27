@@ -4,5 +4,5 @@ export type CartItemProps = {
   description: string;
   price: number;
   image: string;
-  quant?: number;
+  quantity?: number;
 };

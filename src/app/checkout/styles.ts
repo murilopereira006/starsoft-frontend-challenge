@@ -19,3 +19,14 @@ export const BoxContent = styled.div`
 
   padding: ${theme.spacing.large};
 `;
+
+export const BoxItems = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${theme.spacing.base};
+`;
+
+export const NotFound = styled.span`
+  font-size: ${theme.typography.sizes.large};
+  margin-top: ${theme.spacing.large};
+`;
