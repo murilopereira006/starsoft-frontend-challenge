@@ -7,11 +7,11 @@ import { CardProps } from './types';
 
 import { Box, Description, Price, ProductName } from './styles';
 
-const Card = ({ title, description, price }: CardProps) => {
+const Card = ({ name, description, price, image = '' }: Partial<CardProps>) => {
   return (
     <Box>
-      <Image src={''} alt='Product image' width={295} />
-      <ProductName>{title}</ProductName>
+      <Image src={image} alt='Product image' width={295} height={258} />
+      <ProductName>{name}</ProductName>
       <Description>{description}</Description>
 
       <Price>

@@ -5,6 +5,15 @@ const nextConfig: NextConfig = {
     styledComponents: true,
   },
   devIndicators: false,
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'softstar.s3.amazonaws.com',
+        pathname: '/**',
+      },
+    ],
+  },
 };
 
 export default nextConfig;

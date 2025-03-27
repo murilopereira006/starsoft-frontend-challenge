@@ -1,8 +1,13 @@
 'use client';
+
+import { useEffect } from 'react';
+
+import { Product } from '@/api/types';
+import { useProducts } from '@/hooks/useProducts';
+
 import Button from '@/components/Button';
 import Card from '@/components/Card';
-import { useProducts } from '@/hooks/useProducts';
-import { Key, useEffect } from 'react';
+
 import { Grid, Wrapper } from './styles';
 
 export default function Page() {
@@ -23,21 +28,15 @@ export default function Page() {
   return (
     <Wrapper>
       <Grid>
-        {data?.data.map(
-          (product: {
-            id: Key | null | undefined;
-            name: string;
-            description: string;
-            price: number;
-          }) => (
-            <Card
-              key={product.id}
-              title={product.name}
-              description={product.description}
-              price={product.price}
-            />
-          )
-        )}
+        {data?.data.map((product: Product) => (
+          <Card
+            key={product.id}
+            image={product.image}
+            name={product.name}
+            description={product.description}
+            price={product.price}
+          />
+        ))}
       </Grid>
 
       <div>

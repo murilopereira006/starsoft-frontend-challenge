@@ -26,8 +26,11 @@ export const Description = styled.h6`
   font-weight: 500;
 
   color: ${theme.colors.text.secondary};
-
   margin: ${theme.spacing.small} 0;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 `;
 
 export const Price = styled.div`
