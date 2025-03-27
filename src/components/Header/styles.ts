@@ -10,7 +10,7 @@ export const Wrapper = styled.nav`
   height: ${theme.layout.headerHeight};
 
   padding: 0 40px;
-  border-bottom: 1px solid var(--foreground);
+  border-bottom: 1px solid ${theme.colors.gray};
 `;
 
 export const LogoImg = styled.img`
