@@ -17,7 +17,7 @@ export default function Page() {
   const { data, loading, error, fetchProducts } = useProducts();
 
   useEffect(() => {
-    fetchProducts({ page: 1, limit: 10 });
+    fetchProducts({ page: 1, limit: 4 });
   }, [fetchProducts]);
 
   if (loading) {
