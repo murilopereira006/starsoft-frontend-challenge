@@ -1,3 +1,5 @@
+import { Button, Wrapper } from './styles';
+
 type NumericSelectorProps = {
   value: number;
   updateValue: (value: number) => void;
@@ -5,13 +7,13 @@ type NumericSelectorProps = {
 
 const NumericSelector = ({ value, updateValue }: NumericSelectorProps) => {
   return (
-    <div>
-      <button disabled={value === 0} onClick={() => updateValue(value - 1)}>
+    <Wrapper>
+      <Button disabled={value === 0} onClick={() => updateValue(value - 1)}>
         -
-      </button>
+      </Button>
       <span>{value}</span>
-      <button onClick={() => updateValue(value + 1)}>+</button>
-    </div>
+      <Button onClick={() => updateValue(value + 1)}>+</Button>
+    </Wrapper>
   );
 };
 

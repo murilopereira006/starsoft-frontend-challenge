@@ -2,15 +2,17 @@
 
 import Button from '@/components/Button';
 import CartItem from '@/components/CartItem';
-
-import { BoxContent, BoxItems, NotFound, Wrapper } from './styles';
-
 import { CartItemProps } from '@/components/CartItem/types';
-
 import { useAppSelector } from '@/hooks/useRedux';
+import { BoxContent, BoxItems, NotFound, Wrapper } from './styles';
 
 export default function Checkout() {
   const cartItems = useAppSelector((state) => state.cart.items);
+
+  const total = cartItems.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0
+  );
 
   if (!cartItems.length)
     return (
@@ -38,7 +40,7 @@ export default function Checkout() {
           ))}
         </BoxItems>
 
-        <h1>Total</h1>
+        <h1>Total: {total} ETH</h1>
 
         <Button action={() => console.log('finalizar compra')}>
           FINALIZAR COMPRA
