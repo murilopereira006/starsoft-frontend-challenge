@@ -1,10 +1,21 @@
 'use client';
 
+import Image from 'next/image';
+
 import Button from '@/components/Button';
 import CartItem from '@/components/CartItem';
 import { CartItemProps } from '@/components/CartItem/types';
 import { useAppSelector } from '@/hooks/useRedux';
-import { BoxContent, BoxItems, NotFound, Wrapper } from './styles';
+
+import EtheriumIcon from '@/../public/assets/etherium.png';
+import {
+  BoxContent,
+  BoxItems,
+  ETHPrice,
+  NotFound,
+  Price,
+  Wrapper,
+} from './styles';
 
 export default function Checkout() {
   const cartItems = useAppSelector((state) => state.cart.items);
@@ -24,8 +35,6 @@ export default function Checkout() {
   return (
     <Wrapper>
       <BoxContent>
-        <h1>Checkout</h1>
-
         <BoxItems>
           {cartItems.map((item: CartItemProps) => (
             <CartItem
@@ -40,7 +49,18 @@ export default function Checkout() {
           ))}
         </BoxItems>
 
-        <h1>Total: {total} ETH</h1>
+        <Price>
+          <span>TOTAL</span>
+          <ETHPrice>
+            <Image
+              src={EtheriumIcon}
+              alt='Etherium icon'
+              width={30}
+              height={30}
+            />
+            <span>{total} ETH</span>
+          </ETHPrice>
+        </Price>
 
         <Button action={() => console.log('finalizar compra')}>
           FINALIZAR COMPRA
